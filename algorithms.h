@@ -1,5 +1,5 @@
 /**
-* @brief wrappers over standard STL algorithms, to minimize code size, and make more readable
+* @brief wrappers over standard algorithms, to minimize code size, and make more readable 
 *
 * @author Sergey Masuryan
 * Contact Telegram: @SergeyJamesM
@@ -21,7 +21,7 @@
 *	Complexity   : At most last - first applications of the predicate
 *	Return value :
 *	false if the range [first, last) is empty, or no such element is found in range [first, last).
-*   true if the range [first, last) contains const Ty& Val.
+*   true  if the range [first, last) contains const Ty& Val.
 */
 template<class Init, class Ty>
 inline bool contains(Init begin, Init end, const Ty& Val)
@@ -59,8 +59,7 @@ inline void quik_remove_at(std::vector<T>& v, std::size_t idx)
 template<class C, class T>
 inline void insert_sorted(C & c, const T& item)
 {
-	const auto pos = std::lower_bound(c.begin(), c.end(), item);
-	v.insert(pos, item);
+	c.insert(std::lower_bound(c.begin(), c.end(), item), item);
 }
 
 
