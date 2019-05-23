@@ -62,7 +62,17 @@ inline void insert_sorted(C & c, const T& item)
 	c.insert(std::lower_bound(c.begin(), c.end(), item), item);
 }
 
-
+/*
+*	Since        :	C++14 (and higer).
+*	Complexity   :	For nonempty ranges, exactly std::distance(first,last) -1 applications of the corresponding predicate.
+*	Return value :	Forward iterator to the new end of the range
+*	USage        :	Erase–remove idiom.
+*/
+template<class FwdIt>
+inline FwdIt remove_multi_wshitespace(FwdIt begin, FwdIt end)
+{
+	return std::unique(begin, end, [](const auto& a, const auto& b) {  return isspace(a) && isspace(b); });
+}
 
 #endif // !experiments_algorithms_hpp
 
