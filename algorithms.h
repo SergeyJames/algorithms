@@ -30,7 +30,7 @@ inline bool contains(Init begin, Init end, const Ty& Val) noexcept
 }
 
 /**
- *  reloaded version
+ *  added overloaded version of 'contains' function
  */
 template<class C, class Ty>
 inline bool contains(C & c, const Ty& Val) noexcept
