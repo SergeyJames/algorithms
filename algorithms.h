@@ -29,6 +29,15 @@ inline bool contains(Init begin, Init end, const Ty& Val) noexcept
 	return (std::find(begin, end, Val) != end);
 }
 
+/**
+ *  reloaded version
+ */
+template<class C, class Ty>
+inline bool contains(C & c, const Ty& Val) noexcept
+{
+	return contains(std::begin(c), std::end(c), Val);
+}
+
 
 /**
 *	Required     :
