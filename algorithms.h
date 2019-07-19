@@ -39,6 +39,20 @@ inline bool contains(C & c, const Ty& Val) noexcept
 }
 
 
+/***TEST***/
+template<class Init, class Ty>
+inline Init find_fast(Init begin, Init end, const Ty& Val) noexcept
+{
+	for (; begin != end; ++begin) {
+        if (*begin == Val) {
+            return begin;
+        }
+    }
+    return end;
+}
+
+
+
 /**
 *	Required     :
 *	Complexity   : At most last - first applications of the predicate
