@@ -14,9 +14,6 @@
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
 #include <algorithm>
-#include <cstddef>
-#include <vector>
-#include <deque>
 
 namespace wrp {
 
