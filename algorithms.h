@@ -28,8 +28,7 @@ namespace wrp {
 	*		true  if the range [first, last) contains const Ty& Val.
 	*/
 	template<class Init, class Ty>
-	inline bool contains(Init begin, Init end, const Ty& Val) noexcept
-	{
+	inline bool contains(Init begin, Init end, const Ty& Val) noexcept {
 		return (std::find(begin, end, Val) != end);
 	}
 
@@ -37,8 +36,7 @@ namespace wrp {
  	*  overloaded version of 'contains' function
  	*/
 	template<class C, class Ty>
-	inline bool contains(C & c, const Ty& Val) noexcept
-	{
+	inline bool contains(C & c, const Ty& Val) noexcept	{
 		return contains(std::begin(c), std::end(c), Val);
 	}
 
@@ -50,8 +48,7 @@ namespace wrp {
 	*   	true  if the range [first, last) an element for which predicate pred returns true
 	*/
 	template<class Init, class Pr>
-	inline bool contains_if(Init begin, Init end, Pr pred) noexcept
-	{
+	inline bool contains_if(Init begin, Init end, Pr pred) noexcept {
 		return (std::find_if(begin, end, pred) != end);
 	}
 	
@@ -61,8 +58,7 @@ namespace wrp {
 	*	Return value : (none)
 	*/
 	template<class T>
-	inline void quik_remove_at(T& v, std::size_t idx) noexcept
-	{
+	inline void quik_remove_at(T& v, std::size_t idx) noexcept {
 		if (idx < v.size()) {
 			v[idx] = std::move(v.back());
 			v.pop_back();
@@ -82,8 +78,7 @@ namespace wrp {
 	*	Return value : (none)
 	*/
 	template<class C, class T>
-	inline void insert_sorted(C & c, const T& item)
-	{
+	inline void insert_sorted(C & c, const T& item) {
 		c.insert(std::lower_bound(c.begin(), c.end(), item), item);
 	}
 
@@ -94,8 +89,7 @@ namespace wrp {
 	*	USage        :	Erase-remove idiom.
 	*/
 	template<class FwdIt>
-	inline FwdIt remove_multi_wshitespace(FwdIt begin, FwdIt end) noexcept
-	{
+	inline FwdIt remove_multi_wshitespaces(FwdIt begin, FwdIt end) noexcept {
 		return std::unique(begin, end, [](const auto& a, const auto& b) {  return isspace(a) && isspace(b); });
 	}
 
@@ -103,12 +97,12 @@ namespace wrp {
 	*	Complexity   :	Logarithmic
 	*	Return value :	nums count, min val is 1
 	*/
-	inline int calc_nums_count(int a) noexcept
-	{
+	inline int calc_nums_count(int a) noexcept {
 		int n{ 1 };
-		while ((a /= 10) > 0) ++n;
+		while ( (a /= 10) > 0 ) ++n;
 		return n; // NRVO optimization
 	}
+	
 } // !namespace wrp
 
 #endif // !experiments_algorithms_hpp
