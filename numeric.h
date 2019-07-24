@@ -6,14 +6,14 @@
 * Contact Telegram: @SergeyJamesM
 *
 */
-# pragma once
+#pragma once
 #ifndef experiments_numeric_h
 #define experiments_numeric_h
 #include <numeric>
 
 namespace wrp {
-
-   	/**
+	
+	/**
      *  @brief        : calculate average value in the range [first,last) (container c) using operator+()
      * 	@required     : InputIt must meet the requirements of LegacyInputIterator.
      * 	@complexity   : At most last - first applications of the predicate
@@ -21,7 +21,7 @@ namespace wrp {
      * */
 	template<class C, class T = float>
 	inline constexpr T average(const C & c, T v = 0.0f) noexcept {
-		return (c.empty() ? 0.0 : std::accumulate(c.begin(), c.end(), 0) / static_cast<T>(c.size()));
+		return (c.empty() ? 0.0 : std::accumulate(c.cbegin(), c.cend(), 0) / static_cast<T>(c.size()));
 	}
 
 	/*

@@ -6,7 +6,7 @@
 * Contact Telegram: @SergeyJamesM
 *
 */
-# pragma once
+#pragma once
 #ifndef experiments_compare_h
 #define experiments_compare_h
 
@@ -18,7 +18,7 @@ namespace wrp {
      *  @return value : bool
      **/
 	template<typename Init>
-	inline bool operator!=(Init _beg, Init _end) {
+	inline bool operator!=(Init _beg, Init _end) noexcept {
     	return _beg != _end; 
 	}
     
