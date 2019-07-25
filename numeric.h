@@ -25,11 +25,11 @@ namespace wrp {
 	}
 
     /**
-     *  @brief        : calculate nums count (only signed integral types, and not more than INT64_MAX)
+     *  @brief        : calculate number of digits(only signed integral types, and not more than INT64_MAX)
      *  @complexity   :	Logarithmic
-     * 	@return value :	nums count, min val is 1 
+     * 	@return value :	number of digits, min val is 1 max cal is 19 (INT64_MAX)
     **/
-	inline constexpr unsigned short calc_nums_count(int64_t a) noexcept {
+	inline constexpr unsigned short number_of_digits(int64_t a) noexcept {
 		short n{ 1 };
 		while ( (a /= 10) > 0 ) ++n;
 		return n; // NRVO optimization
