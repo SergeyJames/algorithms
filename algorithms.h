@@ -37,7 +37,7 @@ namespace wrp {
 	 *		true  if the range [first, last) contains const Ty& Val.
 	**/
 	template<class C, class Ty>
-	inline bool contains(C & c, const Ty& Val) noexcept	{
+	inline bool contains(const C & c, const Ty& Val) noexcept	{
 		return contains(std::begin(c), std::end(c), Val);
 	}
 
@@ -51,7 +51,7 @@ namespace wrp {
 	 *		true  if the range [first, last) contains const Ty& Val.
 	**/
 	template<class C, class Ty>
-	inline bool contains(C & c, Ty&& Val) noexcept	{
+	inline bool contains(const C & c, Ty&& Val) noexcept	{
 		return contains(std::begin(c), std::end(c), std::forward<Ty>(Val));
 	}
 
@@ -68,6 +68,20 @@ namespace wrp {
 	inline bool contains_if(Init _begin, Init _end, Pr pred) noexcept {
 		return (std::find_if(_begin, _end, pred) != _end);
 	}
+
+	/**
+	 *  @brief        : 
+	 *	@required     :
+	 *	@complexity   : At most last - first applications of the predicate
+	 *	@return value :
+	 *		false if the range [first, last) is empty, or no such element predicate pred returns true in range [first, last).
+	 *   	true  if the range [first, last) an element for which predicate pred returns true
+	**/
+	template<class C, class Pr>
+	inline bool contains_if(const C & c, Pr pred) noexcept {
+		return (std::find_if(std::begin(c), std::end(c), pred) != std::end(c));
+	}
+
 
 	
 	/**
