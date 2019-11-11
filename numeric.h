@@ -21,7 +21,7 @@ namespace wrp {
     **/
 	template<class C, class T = float>
 	inline constexpr T average(const C & c, T v = 0.0f) noexcept {
-		return (c.empty() ? 0.0 : std::accumulate(c.cbegin(), c.cend(), 0) / static_cast<T>(c.size()));
+		return (c.empty() ? 0.0 : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size()));
 	}
 
     /**
