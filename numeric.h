@@ -21,20 +21,24 @@ namespace wrp {
     **/
 	template<class C, class T = float>
 	inline constexpr T average(const C & c, T v = 0.0f) noexcept {
-		return (c.empty() ? 0.0 : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size()));
+		return (c.empty() ? static_cast<T>(0) : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size()));
 	}
 
-    /**
-     *  @brief        : calculate number of digits(only signed integral types, and not more than INT64_MAX)
-     *  @complexity   :	Logarithmic
-     * 	@return value :	number of digits, min val is 1 max cal is 19 (INT64_MAX)
-    **/
+	template<class C, class T = float>
+	inline constexpr T average(C && c, T v = 0.0f) noexcept {
+		return (c.empty() ? static_cast<T>(0) : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size()));
+	}
+
+	/**
+	 *  @brief        : calculate number of digits(only signed integral types, and not more than INT64_MAX)
+	 *  @complexity   :	Logarithmic
+	 * 	@return value :	number of digits, min val is 1 max cal is 19 (INT64_MAX)
+	**/
 	inline constexpr unsigned short number_of_digits(int64_t a) noexcept {
 		short n{ 1 };
-		while ( (a /= 10) > 0 ) ++n;
+		while ((a /= 10) > 0) { ++n; }
 		return n; // NRVO optimization
 	}
-
 
 } // !namespace wrp
 
