@@ -3,7 +3,7 @@
 * @brief cross-platform one-file C++ header
 *
 * @author Sergey Masuryan
-* Contact Telegram: @SergeyJamesM
+* Contact Telegram: @SergeyJames
 *
 */
 #pragma once
@@ -69,6 +69,7 @@ namespace wrp {
 		return (std::find_if(_begin, _end, pred) != _end);
 	}
 
+
 	/**
 	 *  @brief        : 
 	 *	@required     :
@@ -83,7 +84,6 @@ namespace wrp {
 	}
 
 
-	
 	/**
 	 *	@brief        : 
 	 *	@required     : unsorted dynamic contiguous sequence containers supporting 'Random Access Iterator' like  std::vector or std::deque

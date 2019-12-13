@@ -3,7 +3,7 @@
 * @brief cross-platform one-file C++ header
 *
 * @author Sergey Masuryan
-* Contact Telegram: @SergeyJamesM
+* Contact Telegram: @SergeyJames
 *
 */
 #pragma once
