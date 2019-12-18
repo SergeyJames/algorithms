@@ -22,9 +22,9 @@ namespace wrp {
 	 *          isFirstDerivedOfSecond<parent, child__>::getResult(); //< false
 	 *          isFirstDerivedOfSecond<child, parent>::getResult();   //< true
 	 *          
-    **/
-    template<typename _Derived, typename _Base>
-    class isFirstDerivedOfSecond {
+	**/
+	template<typename _Derived, typename _Base>
+	class isFirstDerivedOfSecond {
 		class No { };
 		class Yes { No no[2]{}; };
 		static constexpr Yes Test( _Base* );

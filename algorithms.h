@@ -57,7 +57,7 @@ namespace wrp {
 
 
 	/**
-	 *  @brief        : 
+	 *  @brief        : сheck if container contains specific element
 	 *	@required     :
 	 *	@complexity   : At most last - first applications of the predicate
 	 *	@return value :
@@ -71,7 +71,7 @@ namespace wrp {
 
 
 	/**
-	 *  @brief        : 
+	 *  @brief        : сheck if container contains specific element
 	 *	@required     :
 	 *	@complexity   : At most last - first applications of the predicate
 	 *	@return value :
@@ -115,6 +115,7 @@ namespace wrp {
 	inline void insert_sorted(C & c, const T& item) {
 		c.insert(std::lower_bound(c.begin(), c.end(), item), item);
 	}
+	
 
 	/**
 	 *	@required     : sorted container (class C)
