@@ -30,6 +30,17 @@ namespace wrp {
 	}
 
 	/**
+	 *  @brief		: calculate average value in the range [first,last) using operator+()
+	 * 	@required	 : InputIt must meet the requirements of LegacyInputIterator.
+	 * 	@complexity   : At most last - first applications of the predicate
+	 * 	@return value : average value (default is float) 
+	**/
+	template<class Init, class T = float>
+	inline constexpr T average(Init _begin, Init _end, T v = 0.0f) noexcept {
+		return (_begin == _end ? 0.0 : std::accumulate(_begin, _end, v) / static_cast<T>(_end - _begin));
+	}
+
+	/**
 	 *  @brief        : calculate number of digits(only signed integral types, and not more than INT64_MAX)
 	 *  @complexity   : Logarithmic
 	 * 	@return value : number of digits, min val is 1 max cal is 19 (INT64_MAX)
