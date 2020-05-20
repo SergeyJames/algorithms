@@ -24,7 +24,7 @@ namespace wrp {
 	**/
 	template<class Init, class Ty>
 	inline bool contains(Init _begin, Init _end, const Ty& Val) noexcept {
-		return (std::find(_begin, _end, Val) != _end);
+		return std::find(_begin, _end, Val) != _end;
 	}
 
 
@@ -66,7 +66,7 @@ namespace wrp {
 	**/
 	template<class Init, class Pr>
 	inline bool contains_if(Init _begin, Init _end, Pr pred) noexcept {
-		return (std::find_if(_begin, _end, pred) != _end);
+		return std::find_if(_begin, _end, pred) != _end;
 	}
 
 
@@ -80,7 +80,7 @@ namespace wrp {
 	**/
 	template<class C, class Pr>
 	inline bool contains_if(const C & c, Pr pred) noexcept {
-		return (std::find_if(std::begin(c), std::end(c), pred) != std::end(c));
+		return std::find_if(std::begin(c), std::end(c), pred) != std::end(c);
 	}
 
 

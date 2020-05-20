@@ -13,8 +13,8 @@
 namespace wrp {
 
 	/**
-	 *	@required     : Forward iterator
-	 *	@complexity   : At most last - first applications of the predicate
+	 *	@required      : Forward iterator
+	 *	@complexity    : At most last - first applications of the predicate
 	 *  @return value  : bool
 	**/
 	template<typename Init>

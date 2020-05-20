@@ -27,11 +27,11 @@ namespace wrp {
 	class isFirstDerivedOfSecond {
 		class No { };
 		class Yes { No no[2]{}; };
-		static constexpr Yes Test( _Base* );
-		static constexpr No Test( ... );
+		static constexpr Yes Test(_Base*);
+		static constexpr No Test(...);
 	public:
 		static constexpr bool getResult() noexcept { 
-			return { sizeof(Test(static_cast<_Derived*>(0))) == sizeof(Yes) };
+			return sizeof(Test(static_cast<_Derived*>(0))) == sizeof(Yes);
 		}
 	};
 } // ! namespace wrp

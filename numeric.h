@@ -21,12 +21,12 @@ namespace wrp {
 	**/
 	template<class C, class T = float>
 	inline constexpr T average(const C & c, T v = 0.0f) noexcept {
-		return (c.empty() ? static_cast<T>(0) : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size()));
+		return c.empty() ? static_cast<T>(0) : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size());
 	}
 
 	template<class C, class T = float>
 	inline constexpr T average(C && c, T v = 0.0f) noexcept {
-		return (c.empty() ? static_cast<T>(0) : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size()));
+		return c.empty() ? static_cast<T>(0) : std::accumulate(c.cbegin(), c.cend(), v) / static_cast<T>(c.size());
 	}
 
 	/**
@@ -37,7 +37,7 @@ namespace wrp {
 	**/
 	template<class Init, class T = float>
 	inline constexpr T average(Init _begin, Init _end, T v = 0.0f) noexcept {
-		return (_begin == _end ? 0.0 : std::accumulate(_begin, _end, v) / static_cast<T>(_end - _begin));
+		return _begin == _end ? 0.0 : std::accumulate(_begin, _end, v) / static_cast<T>(_end - _begin);
 	}
 
 	/**
