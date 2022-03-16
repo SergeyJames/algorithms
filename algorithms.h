@@ -7,9 +7,6 @@
 *
 */
 #pragma once
-#ifndef experiments_algorithms_hpp
-#define experiments_algorithms_hpp
-
 #include <algorithm>
 
 namespace wrp {
@@ -143,8 +140,7 @@ namespace wrp {
 	template<class FwdIt>
 	inline FwdIt remove_multi_wshitespaces(FwdIt begin, FwdIt end) noexcept {
 		return std::unique(begin, end, [](const auto& a, const auto& b) {  return isspace(a) && isspace(b); });
-	}	
+	}
 	
 } // !namespace wrp
 
-#endif // !experiments_algorithms_hpp

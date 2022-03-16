@@ -7,15 +7,12 @@
 *
 */
 #pragma once
-#ifndef experiments_compare_h
-#define experiments_compare_h 1
-
 namespace wrp {
 
 	/**
 	 *	@required      : Forward iterator
 	 *	@complexity    : At most last - first applications of the predicate
-	 *  @return value  : bool
+	 *	@return value  : bool
 	**/
 	template<typename Init>
 	inline bool operator!=(Init _beg, Init _end) noexcept {
@@ -23,5 +20,3 @@ namespace wrp {
 	}
 	
 } // !namespace wrp
-
-#endif // !experiments_compare_h
