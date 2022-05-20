@@ -59,7 +59,7 @@ namespace wrp {
 	 *	@complexity   : At most last - first applications of the predicate
 	 *	@return value :
 	 *		false if the range [first, last) is empty, or no such element predicate pred returns true in range [first, last).
-	 *   	true  if the range [first, last) an element for which predicate pred returns true
+	 *		true  if the range [first, last) an element for which predicate pred returns true
 	**/
 	template<class Init, class Pr>
 	inline bool contains_if(Init _begin, Init _end, Pr pred) noexcept {
@@ -73,7 +73,7 @@ namespace wrp {
 	 *	@complexity   : At most last - first applications of the predicate
 	 *	@return value :
 	 *		false if the range [first, last) is empty, or no such element predicate pred returns true in range [first, last).
-	 *   	true  if the range [first, last) an element for which predicate pred returns true
+	 *		true  if the range [first, last) an element for which predicate pred returns true
 	**/
 	template<class C, class Pr>
 	inline bool contains_if(const C & c, Pr pred) noexcept {
@@ -82,14 +82,13 @@ namespace wrp {
 
 
 	/**
-	 *	@brief        : 
+	 *	@brief        :
 	 *	@required     : unsorted dynamic contiguous sequence containers supporting 'Random Access Iterator' like  std::vector or std::deque
 	 *	@complexity   : Amortized constant.
 	 *	@return value : (void)
-	 * 
 	**/
 	template<class C>
-	inline void quik_remove_at(C & c, std::size_t idx) noexcept {
+	inline void quik_remove_at(C& c, std::size_t idx) noexcept {
 		if (idx < c.size()) {
 			c[idx] = std::move(c.back());
 			c.pop_back();

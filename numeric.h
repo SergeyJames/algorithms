@@ -29,8 +29,8 @@ namespace wrp {
 
 
 	/**
-	 *  @brief		: calculate average value in the range [first,last) using operator+()
-	 *  @required	 : InputIt must meet the requirements of LegacyInputIterator.
+	 *  @brief        : calculate average value in the range [first,last) using operator+()
+	 *  @required     : InputIt must meet the requirements of LegacyInputIterator.
 	 *  @complexity   : At most last - first applications of the predicate
 	 *  @return value : average value (default is float) 
 	**/
