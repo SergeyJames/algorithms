@@ -1,4 +1,4 @@
-## gitlab   [![Build Status](https://gitlab.com/SergeyJames/wrp/badges/master/pipeline.svg)](https://gitlab.com/SergeyJames/wrp/)  [![coverage report](https://gitlab.com/SergeyJames/wrp/badges/master/coverage.svg)](https://gitlab.com/SergeyJames/wrp/commits/master)
+## gitlab   [![Build Status](https://gitlab.com/SergeyJames/wrp/badges/master/pipeline.svg)](https://gitlab.com/SergeyJames/wrp/)
 
 ``` https://github.com/SergeyJames/wrp ```
 
