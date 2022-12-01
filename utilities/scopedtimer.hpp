@@ -19,7 +19,7 @@ namespace wrp {
 	*/
 	template<class _duration>
 	const char* chronoDurationPrettyName() {
-		const auto dur = typeid(_duration).hash_code();
+		const std::size_t dur = typeid(_duration).hash_code();
 		if(dur == typeid(std::chrono::nanoseconds).hash_code()) {
 			return "nanoseconds";
 		}
@@ -49,17 +49,22 @@ namespace wrp {
 	template<class _duration = std::chrono::milliseconds>
 	class ScopedTimer {
 	public:
-		explicit ScopedTimer(bool printOnExit = false) noexcept
+		explicit ScopedTimer(bool printOnExit = false, const char* tag = nullptr) noexcept
 			: m_start{ std::chrono::high_resolution_clock::now() },
-			  m_printOnExit{ printOnExit }
+			  m_printOnExit{ printOnExit },
+			  m_tag{ tag }
 		{}
 		
 		virtual ~ScopedTimer() noexcept {
+			const auto end = std::chrono::high_resolution_clock::now();
+			const std::string theMessage = m_tag ? std::string{ "The " } + m_tag + " elapsed: " : "Elapsed: ";
+
 			if (m_printOnExit) {
 				std::cout <<
-				"Elapsed: " <<
-				std::chrono::duration_cast<_duration>(std::chrono::high_resolution_clock::now() - m_start).count() <<
-				" " << chronoDurationPrettyName<_duration>() << std::endl;
+				theMessage <<
+				std::chrono::duration_cast<_duration>(end - m_start).count() <<
+				" " <<
+				chronoDurationPrettyName<_duration>() << std::endl;
 			}
 		}
 
@@ -70,6 +75,7 @@ namespace wrp {
 	private:
 		std::chrono::time_point<std::chrono::high_resolution_clock> m_start;
 		const bool m_printOnExit;
+		const char* m_tag{ nullptr };
 
 		ScopedTimer(ScopedTimer&&) = delete;
 		ScopedTimer(const ScopedTimer&) = delete;
